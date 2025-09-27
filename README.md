@@ -1,4 +1,5 @@
 Project Overview: Employee Attrition Prediction
+
 1.Objective
 
 The goal of this project is to predict employee attrition (whether an employee is likely to leave) using historical employee data and machine learning. Additionally, it provides an interactive dashboard for HR analytics to visualize attrition trends, high-risk employees, and other workforce metrics.
