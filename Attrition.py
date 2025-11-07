@@ -56,37 +56,37 @@ with tab1:
     st.header("Exploratory Data Analysis")
     st.markdown("Visualizations of key trends and factors influencing employee attrition.")
     st.subheader("Distribution of Attrition")
-fig1, ax1 = plt.subplots()
-sns.countplot(x='Attrition', data=df, ax=ax1)
-ax1.set_title("Distribution of Attrition")
-st.pyplot(fig1)
+    fig1, ax1 = plt.subplots()
+    sns.countplot(x='Attrition', data=df, ax=ax1)
+    ax1.set_title("Distribution of Attrition")
+    st.pyplot(fig1)
 
 # Show counts
-st.write("Attrition Counts:")
-st.write(df['Attrition'].value_counts())
+    st.write("Attrition Counts:")
+    st.write(df['Attrition'].value_counts())
 
 # -----------------------
 # Pairplot for selected features
 # -----------------------
-st.subheader("Pairplot: Age, MonthlyIncome, YearsAtCompany vs Attrition")
+    st.subheader("Pairplot: Age, MonthlyIncome, YearsAtCompany vs Attrition")
 # Pairplot cannot be directly used with st.pyplot, need to use fig object
-pairplot_fig = sns.pairplot(df[['Age', 'MonthlyIncome', 'YearsAtCompany', 'Attrition']], hue="Attrition", palette="husl")
-st.pyplot(pairplot_fig)
+    pairplot_fig = sns.pairplot(df[['Age', 'MonthlyIncome', 'YearsAtCompany', 'Attrition']], hue="Attrition", palette="husl")
+    st.pyplot(pairplot_fig)
 
 # -----------------------
 # kdeplot for Density Estimation
 # -----------------------
-st.subheader("Density Estimation")
+    st.subheader("Density Estimation")
 # Monthly Income KDE
-fig1, ax1 = plt.subplots(figsize=(8, 6))
-sns.kdeplot(df["MonthlyIncome"], fill=True, color="blue", ax=ax1)
-ax1.set_title("KDE Plot of Monthly Income")
-st.pyplot(fig1)
+    fig1, ax1 = plt.subplots(figsize=(8, 6))
+    sns.kdeplot(df["MonthlyIncome"], fill=True, color="blue", ax=ax1)
+    ax1.set_title("KDE Plot of Monthly Income")
+    st.pyplot(fig1)
 # Years at Company KDE
-fig2, ax2 = plt.subplots(figsize=(8, 6))
-sns.kdeplot(df["YearsAtCompany"], fill=True, color="green", ax=ax2)
-ax2.set_title("KDE Plot of Years at Company")
-st.pyplot(fig2)  
+    fig2, ax2 = plt.subplots(figsize=(8, 6))
+    sns.kdeplot(df["YearsAtCompany"], fill=True, color="green", ax=ax2)
+    ax2.set_title("KDE Plot of Years at Company")
+    st.pyplot(fig2)  
 
 with tab2:
     st.header("Model Evaluation")
